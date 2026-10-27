@@ -1,0 +1,343 @@
+.appRoot {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.mainWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-left: var(--sidebar-width);
+  width: calc(100% - var(--sidebar-width));
+}
+
+.contentArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: var(--space-32) var(--space-24);
+}
+
+.pomodoroContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 480px;
+  animation: tabFadeIn var(--transition-duration-normal) var(--ease-out);
+}
+
+.viewContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: tabFadeIn var(--transition-duration-normal) var(--ease-out);
+}
+
+@keyframes tabFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modo Zen (tela cheia): centralizado, foco absoluto */
+.zenModeRoot {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--black);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-24);
+  animation: fadeIn var(--transition-duration-normal) var(--ease-out);
+}
+
+.zenExitButton {
+  position: absolute;
+  top: var(--space-24);
+  right: var(--space-24);
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  background: transparent;
+  border: 1px solid var(--color-gray-800);
+  border-radius: var(--radius-sm);
+  color: var(--color-gray-400);
+  font-size: var(--font-size-xs);
+  padding: var(--space-8) var(--space-12);
+  cursor: pointer;
+  transition: color var(--transition-fast), border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.zenExitButton:hover {
+  color: var(--white);
+  border-color: var(--color-gray-600);
+  background-color: var(--color-gray-900);
+}
+
+.zenContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 480px;
+  width: 100%;
+}
+
+.zenIntention {
+  margin-top: var(--space-16);
+  font-size: var(--font-size-base);
+  color: var(--white);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+/* Dica discreta de atalhos */
+.shortcutsHintBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-12);
+  margin-top: var(--space-24);
+  color: var(--color-gray-500);
+  font-size: var(--font-size-xs);
+  user-select: none;
+  flex-wrap: wrap;
+}
+
+.shortcutPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.shortcutBadge {
+  background-color: var(--color-gray-900);
+  border: 1px solid var(--color-gray-800);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-family: monospace;
+  font-size: 10px;
+  color: var(--color-gray-400);
+}
+
+/* Aviso discreto: sem cor nova, borda branca, rótulo em texto */
+.discreetAlert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid var(--white);
+  border-radius: var(--radius-sm);
+  padding: var(--space-8) var(--space-12);
+  margin-bottom: var(--space-16);
+  background-color: var(--black);
+  font-size: 13px;
+  gap: var(--space-8);
+}
+
+.alertTag {
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.alertMessage {
+  color: var(--white);
+  flex: 1;
+}
+
+.alertCloseButton {
+  color: var(--gray-text);
+  font-size: 12px;
+  padding: var(--space-4);
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast);
+}
+
+.alertCloseButton:hover {
+  color: var(--white);
+}
+
+/* State testing helper bar */
+.testBar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  margin-top: var(--space-32);
+  padding: var(--space-4) var(--space-8);
+  border: 1px dashed var(--gray-line);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  color: var(--gray-mute);
+}
+
+.testBarLabel {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.testButton {
+  padding: 2px var(--space-8);
+  font-size: 11px;
+  color: var(--gray-text);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--gray-line);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.testButton:hover {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.testButtonActive {
+  background-color: var(--white);
+  color: var(--black);
+  border-color: var(--white);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Placeholder screens for other tabs */
+.placeholderContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-48) var(--space-16);
+  width: 100%;
+  max-width: 520px;
+}
+
+.placeholderTitle {
+  font-size: 18px;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-8);
+  color: var(--white);
+}
+
+.placeholderText {
+  color: var(--gray-text);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Barra fina de progresso da meta diária */
+.goalBarWrapper {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-12);
+}
+
+.goalBarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-400);
+}
+
+.goalBarLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.goalBarLabel strong {
+  color: var(--color-white);
+  font-weight: var(--font-weight-medium);
+}
+
+.goalCelebrationPhrase {
+  color: var(--color-white);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: -0.01em;
+}
+
+.goalBarPct {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  color: var(--color-gray-400);
+}
+
+.goalBarTrack {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-gray-800);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.goalBarFill {
+  height: 100%;
+  background-color: var(--color-white);
+  border-radius: var(--radius-full);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.goalBarFillAchieved {
+  background-color: var(--color-white);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 899px) {
+  .mainWrapper {
+    margin-left: 0;
+    width: 100%;
+    min-height: calc(100vh - var(--bottom-nav-height));
+    padding-bottom: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom, 0px));
+  }
+
+  .contentArea {
+    padding: var(--space-16) var(--space-16);
+    justify-content: center;
+  }
+
+  .testBar {
+    margin-top: var(--space-16);
+  }
+}
+
+/* 375x667 optimization to guarantee no scroll */
+@media (max-height: 700px) and (max-width: 899px) {
+  .contentArea {
+    padding: var(--space-8) var(--space-16);
+  }
+
+  .testBar {
+    margin-top: var(--space-8);
+  }
+}

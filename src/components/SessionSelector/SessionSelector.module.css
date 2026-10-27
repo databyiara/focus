@@ -1,0 +1,92 @@
+.selectorContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.selectorList {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--color-gray-800);
+  border-radius: var(--radius-10);
+  padding: 3px;
+  background-color: var(--color-black);
+  gap: 2px;
+  transition: opacity var(--transition-fast);
+}
+
+.selectorDisabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Indicador deslizante suave */
+.slidingIndicator {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: 0;
+  background-color: var(--color-white);
+  border-radius: var(--radius-6);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: transform var(--transition-normal), width var(--transition-normal), opacity var(--transition-fast);
+}
+
+.indicatorReady {
+  opacity: 1;
+}
+
+.optionButton {
+  position: relative;
+  z-index: 2;
+  padding: 6px 18px;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--color-gray-400);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  border-radius: var(--radius-6);
+  transition: color var(--transition-fast);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.optionButton:hover:not(:disabled) {
+  color: var(--color-white);
+}
+
+.optionButtonActive {
+  color: var(--color-black);
+  font-weight: var(--font-weight-semibold);
+  cursor: default;
+}
+
+.optionButtonActive:hover {
+  color: var(--color-black);
+}
+
+.optionButton:disabled {
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .selectorList {
+    width: 100%;
+    max-width: 320px;
+    justify-content: space-between;
+  }
+
+  .optionButton {
+    flex: 1;
+    padding: 6px var(--space-8);
+    font-size: var(--font-size-xs);
+  }
+}

@@ -1,0 +1,102 @@
+.controlsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-12);
+  width: 100%;
+  margin-top: var(--space-24);
+}
+
+.buttonBase {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  height: 42px;
+  min-height: 42px;
+  padding: 0 var(--space-20);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.01em;
+  border-radius: var(--radius-md);
+  user-select: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-duration-fast) var(--ease-out);
+}
+
+.buttonBase:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.buttonBase:focus-visible {
+  outline: 2px solid var(--color-white);
+  outline-offset: 2px;
+}
+
+.buttonBase:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Animação suave para troca de ícone */
+.iconSlot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  animation: iconSwapIn var(--transition-duration-fast) var(--ease-out);
+}
+
+@keyframes iconSwapIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Botão Primário: fundo branco, texto preto */
+.primaryButton {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border: 1px solid var(--color-white);
+  min-width: 110px;
+}
+
+.primaryButton:hover:not(:disabled) {
+  background-color: var(--color-gray-200);
+  border-color: var(--color-gray-200);
+}
+
+/* Botão Secundário: fundo preto, borda sutil, texto branco */
+.secondaryButton {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border: 1px solid var(--color-gray-800);
+}
+
+.secondaryButton:hover:not(:disabled) {
+  background-color: var(--color-gray-900);
+  border-color: var(--color-gray-600);
+}
+
+@media (max-width: 480px) {
+  .controlsContainer {
+    gap: var(--space-8);
+    margin-top: var(--space-16);
+  }
+
+  .buttonBase {
+    padding: 0 var(--space-16);
+    font-size: var(--font-size-xs);
+    height: 40px;
+    min-height: 40px;
+  }
+
+  .primaryButton {
+    min-width: 96px;
+  }
+}

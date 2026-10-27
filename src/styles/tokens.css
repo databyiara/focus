@@ -1,0 +1,72 @@
+:root {
+  /* Escala de cinza estrita */
+  --color-black: #000000;
+  --color-gray-950: #0a0a0a;
+  --color-gray-900: #121212;
+  --color-gray-800: #1e1e1e;
+  --color-gray-700: #282828;
+  --color-gray-600: #404040;
+  --color-gray-500: #666666;
+  --color-gray-400: #888888;
+  --color-gray-300: #a0a0a0;
+  --color-gray-200: #d4d4d4;
+  --color-gray-100: #ededed;
+  --color-white: #ffffff;
+
+  /* Aliases compatíveis com o restante da aplicação */
+  --black: var(--color-black);
+  --black-2: var(--color-gray-900);
+  --white: var(--color-white);
+  --gray-text: var(--color-gray-300);
+  --gray-mute: var(--color-gray-400);
+  --gray-line: var(--color-gray-800);
+
+  /* Tipografia */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  /* Tamanhos de fonte */
+  --font-size-xs: 11px;
+  --font-size-sm: 13px;
+  --font-size-base: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 22px;
+  --font-size-2xl: 28px;
+  --font-size-timer: clamp(44px, 11vw, 80px);
+
+  /* Espaçamentos: 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+
+  /* Raios de borda: 6 / 10 / 999 */
+  --radius-6: 6px;
+  --radius-10: 10px;
+  --radius-999: 9999px;
+  --radius-sm: var(--radius-6);
+  --radius-md: var(--radius-10);
+  --radius-full: var(--radius-999);
+
+  /* Transições: 150–250ms ease-out */
+  --transition-duration-fast: 150ms;
+  --transition-duration-normal: 200ms;
+  --transition-duration-slow: 250ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: var(--transition-duration-fast) var(--ease-out);
+  --transition-normal: var(--transition-duration-normal) var(--ease-out);
+  --transition-slow: var(--transition-duration-slow) var(--ease-out);
+
+  /* Layout */
+  --sidebar-width: 72px;
+  --content-max-width: 720px;
+  --bottom-nav-height: 56px;
+  --header-height: 56px;
+}

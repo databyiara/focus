@@ -1,0 +1,352 @@
+.container {
+  width: 100%;
+  max-width: var(--content-max-width);
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--space-16);
+  gap: var(--space-32);
+}
+
+.title {
+  font-size: 16px;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: var(--space-4);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  border-top: 1px solid var(--gray-line);
+  padding-top: var(--space-16);
+}
+
+.sectionTitle {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-text);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Campos de Duração em Grid */
+.durationsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: var(--space-12);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.fieldLabel {
+  font-size: 13px;
+  color: var(--white);
+}
+
+.fieldLimit {
+  font-size: 11px;
+  color: var(--gray-mute);
+}
+
+.inputNumber {
+  height: 44px;
+  background-color: var(--black);
+  border: 1px solid var(--gray-line);
+  border-radius: var(--radius-md);
+  padding: 0 var(--space-12);
+  color: var(--white);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  transition: border-color var(--transition-fast);
+}
+
+.inputNumber:focus {
+  border-color: var(--white);
+}
+
+.inputText {
+  height: 44px;
+  background-color: var(--black);
+  border: 1px solid var(--gray-line);
+  border-radius: var(--radius-md);
+  padding: 0 var(--space-12);
+  color: var(--white);
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color var(--transition-fast);
+  width: 100%;
+  max-width: 360px;
+}
+
+.inputText:focus {
+  border-color: var(--white);
+  outline: none;
+}
+
+.inputText::placeholder {
+  color: var(--gray-mute);
+}
+
+.frequencyGroup {
+  display: inline-flex;
+  border: 1px solid var(--gray-line);
+  border-radius: var(--radius-md);
+  padding: 2px;
+  background-color: var(--black);
+  gap: 2px;
+  flex-wrap: wrap;
+}
+
+.frequencyButton {
+  padding: var(--space-8) var(--space-12);
+  min-height: 34px;
+  color: var(--gray-text);
+  font-size: 12px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.frequencyButton:hover {
+  color: var(--white);
+}
+
+.frequencyButtonActive {
+  background-color: var(--white);
+  color: var(--black);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Opções de Alternância (Toggles) */
+.toggleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  gap: var(--space-16);
+}
+
+.toggleLabelGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.toggleTitle {
+  font-size: 14px;
+  color: var(--white);
+}
+
+.toggleDescription {
+  font-size: 12px;
+  color: var(--gray-mute);
+}
+
+.toggleButton {
+  width: 52px;
+  height: 32px;
+  min-height: 32px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--gray-line);
+  background-color: var(--black);
+  color: var(--gray-text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: var(--font-weight-semibold);
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.toggleButtonActive {
+  background-color: var(--white);
+  color: var(--black);
+  border-color: var(--white);
+}
+
+.toggleButtonDisabled {
+  border-color: var(--gray-line);
+  color: var(--gray-mute);
+  cursor: not-allowed;
+  background-color: var(--black-2);
+}
+
+/* Meta Diária e Atalhos */
+.goalRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  flex-wrap: wrap;
+}
+
+.unitToggleGroup {
+  display: inline-flex;
+  border: 1px solid var(--gray-line);
+  border-radius: var(--radius-sm);
+  padding: 2px;
+  background-color: var(--black);
+}
+
+.unitToggleButton {
+  padding: var(--space-4) var(--space-10);
+  min-height: 28px;
+  color: var(--gray-text);
+  font-size: 11px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.unitToggleButton:hover {
+  color: var(--white);
+}
+
+.unitToggleButtonActive {
+  background-color: var(--white);
+  color: var(--black);
+  font-weight: var(--font-weight-medium);
+}
+
+.shortcutGroup {
+  display: inline-flex;
+  border: 1px solid var(--gray-line);
+  border-radius: var(--radius-md);
+  padding: 2px;
+  background-color: var(--black);
+}
+
+.shortcutButton {
+  padding: var(--space-4) var(--space-12);
+  min-height: 36px;
+  color: var(--gray-text);
+  font-size: 12px;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.shortcutButton:hover {
+  color: var(--white);
+}
+
+.shortcutButtonActive,
+.shortcutButtonActive:hover {
+  background-color: var(--white);
+  color: var(--black);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Avisos e Erros Objetivos */
+.noticeBox {
+  border: 1px solid var(--gray-line);
+  border-radius: var(--radius-sm);
+  padding: var(--space-8) var(--space-12);
+  font-size: 12px;
+  color: var(--gray-text);
+  line-height: 1.5;
+}
+
+.errorBox {
+  border: 1px solid var(--white);
+  border-radius: var(--radius-sm);
+  padding: var(--space-8) var(--space-12);
+  font-size: 13px;
+  color: var(--white);
+  display: flex;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.errorTag {
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Botões de Ação (Backup) */
+.actionButtonsRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  flex-wrap: wrap;
+}
+
+.primaryAction {
+  height: 44px;
+  min-height: 44px;
+  padding: 0 var(--space-16);
+  background-color: var(--white);
+  color: var(--black);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  font-size: 13px;
+  transition: background-color var(--transition-fast);
+}
+
+.primaryAction:hover {
+  background-color: var(--gray-text);
+}
+
+.secondaryAction {
+  height: 44px;
+  min-height: 44px;
+  padding: 0 var(--space-16);
+  background-color: var(--black);
+  color: var(--white);
+  border: 1px solid var(--gray-line);
+  font-weight: var(--font-weight-regular);
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  font-size: 13px;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.secondaryAction:hover {
+  border-color: var(--white);
+  background-color: var(--black-2);
+}
+
+/* Tabela de Atalhos de Teclado */
+.shortcutsTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.shortcutsTable td {
+  padding: var(--space-8) 0;
+  border-bottom: 1px solid var(--gray-line);
+}
+
+.shortcutKey {
+  display: inline-block;
+  padding: 2px var(--space-8);
+  background-color: var(--black-2);
+  border: 1px solid var(--gray-line);
+  border-radius: var(--radius-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--white);
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.shortcutDesc {
+  color: var(--gray-text);
+  padding-left: var(--space-16);
+}

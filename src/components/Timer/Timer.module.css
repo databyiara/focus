@@ -1,0 +1,124 @@
+.timerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: var(--space-16) 0 var(--space-8) 0;
+}
+
+.ringWrapper {
+  position: relative;
+  width: clamp(250px, 68vw, 296px);
+  height: clamp(250px, 68vw, 296px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progressRing {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.ringTrack {
+  fill: none;
+  stroke: var(--color-gray-800);
+  stroke-width: 1.5;
+}
+
+.ringProgress {
+  fill: none;
+  stroke: var(--color-white);
+  stroke-width: 1.5;
+  transition: stroke-dashoffset var(--transition-normal);
+}
+
+.innerContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: var(--space-16);
+  z-index: 1;
+}
+
+.modeBadge {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-gray-400);
+  margin-bottom: var(--space-4);
+  user-select: none;
+}
+
+.timeDisplay {
+  font-size: var(--font-size-timer);
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+  color: var(--color-white);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  user-select: none;
+  margin: var(--space-8) 0;
+}
+
+/* Indicador de ciclos: 4 pontinhos */
+.cycleDots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: var(--radius-full);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+/* Preenchido = concluído */
+.dotCompleted {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-white);
+}
+
+/* Anel = atual */
+.dotCurrent {
+  background-color: transparent;
+  border: 1.5px solid var(--color-white);
+}
+
+/* Vazio = pendente */
+.dotPending {
+  background-color: transparent;
+  border: 1px solid var(--color-gray-700);
+}
+
+.taskInfo {
+  color: var(--color-gray-500);
+  font-size: 12px;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
+  text-align: center;
+}
+
+.taskInfoSelected {
+  color: var(--color-gray-200);
+  font-weight: var(--font-weight-medium);
+}

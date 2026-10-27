@@ -1,0 +1,351 @@
+.taskListContainer {
+  width: 100%;
+  max-width: var(--content-max-width);
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--space-16);
+  position: relative;
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-16);
+  flex-wrap: wrap;
+  gap: var(--space-12);
+}
+
+/* Abas Principais (Hoje / Todas) */
+.tabsContainer {
+  display: inline-flex;
+  gap: var(--space-4);
+  background-color: var(--color-black);
+  border: 1px solid var(--color-gray-800);
+  border-radius: var(--radius-8);
+  padding: 3px;
+}
+
+.mainTabButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-6) var(--space-14);
+  min-height: 34px;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-400);
+  border-radius: var(--radius-6);
+  background: transparent;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.mainTabButton:hover {
+  color: var(--color-white);
+}
+
+.mainTabButtonActive {
+  background-color: var(--color-white);
+  color: #000000;
+  font-weight: var(--font-weight-semibold);
+}
+
+.mainTabButtonActive span,
+.mainTabButtonActive svg {
+  color: #000000;
+  stroke: #000000;
+}
+
+/* Filtros secundários */
+.filterGroup {
+  display: inline-flex;
+  border: 1px solid var(--color-gray-800);
+  border-radius: var(--radius-8);
+  padding: 3px;
+  background-color: var(--color-black);
+  gap: 3px;
+}
+
+.filterButton {
+  padding: var(--space-4) var(--space-10);
+  min-height: 28px;
+  color: var(--color-gray-400);
+  font-size: var(--font-size-xs);
+  border-radius: var(--radius-6);
+  background: transparent;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+  cursor: pointer;
+}
+
+.filterButton:hover {
+  color: var(--color-white);
+}
+
+.filterButtonActive {
+  background-color: var(--color-white);
+  color: #000000;
+  font-weight: var(--font-weight-medium);
+}
+
+/* Formulário de adição rápida */
+.inputForm {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  width: 100%;
+  margin-bottom: var(--space-16);
+}
+
+.taskInput {
+  flex: 1;
+  height: 44px;
+  background-color: var(--color-black);
+  border: 1px solid var(--color-gray-800);
+  border-radius: var(--radius-md);
+  padding: 0 var(--space-14);
+  color: var(--color-white);
+  font-size: var(--font-size-sm);
+  transition: border-color var(--transition-fast);
+}
+
+.taskInput:focus {
+  border-color: var(--color-white);
+}
+
+.taskInput::placeholder {
+  color: var(--color-gray-500);
+}
+
+.addButton {
+  height: 44px;
+  min-height: 44px;
+  padding: 0 var(--space-16);
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.addButton:hover:not(:disabled) {
+  background-color: var(--color-gray-200);
+}
+
+.addButton:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.addButton:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Lista */
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--color-gray-800);
+  width: 100%;
+}
+
+/* Estado vazio refinado */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-48) var(--space-24);
+  text-align: center;
+  border: 1px dashed var(--color-gray-800);
+  border-radius: var(--radius-10);
+  margin-top: var(--space-12);
+  background-color: var(--color-black);
+}
+
+.emptyIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-gray-900);
+  color: var(--color-gray-400);
+  margin-bottom: var(--space-12);
+}
+
+.emptyTitle {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-white);
+  margin-bottom: var(--space-4);
+}
+
+.emptySubtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-400);
+  max-width: 340px;
+  line-height: 1.5;
+  margin-bottom: var(--space-16);
+}
+
+.emptyActionButton {
+  height: 36px;
+  padding: 0 var(--space-16);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-white);
+  background-color: var(--color-black);
+  border: 1px solid var(--color-gray-700);
+  border-radius: var(--radius-6);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.emptyActionButton:hover {
+  background-color: var(--color-gray-900);
+  border-color: var(--color-gray-500);
+}
+
+/* Toast de Desfazer exclusão flutuante */
+.undoToast {
+  position: fixed;
+  bottom: var(--space-24);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-gray-900);
+  border: 1px solid var(--color-gray-700);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+  border-radius: var(--radius-8);
+  padding: var(--space-12) var(--space-16);
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  z-index: 1000;
+  max-width: 460px;
+  width: calc(100% - 32px);
+  overflow: hidden;
+  animation: slideUpToast 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUpToast {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 16px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.undoContent {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+  min-width: 0;
+}
+
+.undoText {
+  font-size: var(--font-size-xs);
+  color: var(--color-white);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.undoText strong {
+  font-weight: var(--font-weight-semibold);
+}
+
+.undoButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-4) var(--space-10);
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-xs);
+  border-radius: var(--radius-4);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color var(--transition-fast);
+}
+
+.undoButton:hover {
+  background-color: var(--color-gray-200);
+}
+
+.closeUndoButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--color-gray-400);
+  background: transparent;
+  border-radius: var(--radius-4);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.closeUndoButton:hover {
+  color: var(--color-white);
+}
+
+.undoProgressBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background-color: var(--color-white);
+  width: 100%;
+  animation: countdownBar 5s linear forwards;
+}
+
+@keyframes countdownBar {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+@media (max-width: 540px) {
+  .headerRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tabsContainer {
+    width: 100%;
+  }
+
+  .mainTabButton {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .filterGroup {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .filterButton {
+    flex: 1;
+    text-align: center;
+  }
+}

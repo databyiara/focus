@@ -1,0 +1,25 @@
+.header {
+  height: var(--header-height);
+  width: 100%;
+  border-bottom: 1px solid var(--gray-line);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 var(--space-32);
+  background-color: var(--black);
+}
+
+.dateDisplay {
+  color: var(--color-gray-400);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: -0.01em;
+  user-select: none;
+}
+
+@media (max-width: 899px) {
+  .header {
+    padding: 0 var(--space-16);
+    justify-content: center;
+  }
+}

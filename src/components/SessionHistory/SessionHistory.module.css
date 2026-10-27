@@ -1,0 +1,246 @@
+.container {
+  width: 100%;
+  max-width: var(--content-max-width);
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--space-16);
+  gap: var(--space-24);
+}
+
+.headerRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.title {
+  font-size: 16px;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.filtersRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+/* Grupo de filtros */
+.filterGroup {
+  display: inline-flex;
+  border: 1px solid var(--gray-line);
+  border-radius: var(--radius-md);
+  padding: 2px;
+  background-color: var(--black);
+}
+
+.filterButton {
+  padding: var(--space-4) var(--space-12);
+  min-height: 36px;
+  color: var(--gray-text);
+  font-size: 12px;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.filterButton:hover {
+  color: var(--white);
+}
+
+.filterButtonActive,
+.filterButtonActive:hover {
+  background-color: var(--white);
+  color: var(--black);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Agrupamento por Data */
+.dateGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.dateHeader {
+  font-size: 12px;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gray-text);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--gray-line);
+}
+
+/* Tabela / Lista de Sessões */
+.sessionList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sessionItem {
+  display: grid;
+  grid-template-columns: 100px 90px 1fr 70px 80px 120px;
+  align-items: center;
+  min-height: 44px;
+  padding: var(--space-8) 0;
+  border-bottom: 1px solid var(--gray-line);
+  font-size: 13px;
+  gap: var(--space-8);
+}
+
+.sessionItem:hover {
+  background-color: var(--black-2);
+}
+
+.timeCol {
+  font-variant-numeric: tabular-nums;
+  color: var(--white);
+}
+
+.modeCol {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--gray-text);
+}
+
+.taskCol {
+  color: var(--white);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.taskColEmpty {
+  color: var(--gray-mute);
+}
+
+.plannedCol {
+  font-variant-numeric: tabular-nums;
+  color: var(--gray-mute);
+  text-align: right;
+}
+
+.actualCol {
+  font-variant-numeric: tabular-nums;
+  color: var(--white);
+  text-align: right;
+}
+
+/* Rótulo de status: texto + ícone, sem cor */
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-4);
+  font-size: 12px;
+  color: var(--white);
+}
+
+.statusIcon {
+  color: var(--white);
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-48) var(--space-24);
+  text-align: center;
+  border: 1px dashed var(--color-gray-800);
+  border-radius: var(--radius-10);
+  margin-top: var(--space-16);
+}
+
+.emptyIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-gray-900);
+  color: var(--color-gray-400);
+  margin-bottom: var(--space-16);
+}
+
+.emptyTitle {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-white);
+  margin-bottom: var(--space-4);
+}
+
+.emptySubtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-400);
+  max-width: 320px;
+  line-height: 1.5;
+  margin-bottom: var(--space-16);
+}
+
+.emptyActionButton {
+  height: 36px;
+  padding: 0 var(--space-16);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-white);
+  background-color: var(--color-black);
+  border: 1px solid var(--color-gray-700);
+  border-radius: var(--radius-6);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.emptyActionButton:hover {
+  background-color: var(--color-gray-900);
+  border-color: var(--color-gray-500);
+}
+
+@media (max-width: 768px) {
+  .sessionItem {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    padding: var(--space-12) 0;
+    gap: var(--space-4);
+  }
+
+  .timeCol {
+    grid-column: 1;
+    font-size: 13px;
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .statusBadge {
+    grid-column: 2;
+  }
+
+  .taskCol {
+    grid-column: 1 / -1;
+    font-size: 13px;
+  }
+
+  .modeCol,
+  .plannedCol,
+  .actualCol {
+    font-size: 11px;
+    color: var(--gray-text);
+  }
+
+  .mobileDetails {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--gray-text);
+    padding-top: var(--space-4);
+  }
+}

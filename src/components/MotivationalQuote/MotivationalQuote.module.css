@@ -1,0 +1,41 @@
+.quoteWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 480px;
+  margin-top: var(--space-16);
+  margin-bottom: var(--space-24);
+  padding: 0 var(--space-16);
+  text-align: center;
+  min-height: 38px;
+}
+
+.quoteText {
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  color: var(--color-gray-400);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: 0.01em;
+  user-select: none;
+  margin: 0;
+  opacity: 1;
+  transition: opacity 250ms var(--ease-out);
+}
+
+.fading {
+  opacity: 0;
+}
+
+@media (max-width: 480px) {
+  .quoteWrapper {
+    margin-top: var(--space-12);
+    margin-bottom: var(--space-16);
+    padding: 0 var(--space-8);
+    min-height: 34px;
+  }
+
+  .quoteText {
+    font-size: var(--font-size-xs);
+  }
+}
